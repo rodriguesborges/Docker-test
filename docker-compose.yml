@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: gestao_escolar_api
+    ports:
+      - "8000:8000"
+    # Sem a variável de ambiente DATABASE_URL, a aplicação usará o banco SQLite.
+    # O arquivo do banco de dados (escola.db) será criado dentro do container
+    # e será perdido se o container for removido.
